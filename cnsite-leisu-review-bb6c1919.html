@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 简明指南</title>
+    <style>
+        /* 极简留白 · 窄幅正文 · 信息卡片 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8fafb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1f2a3a;
+            line-height: 1.65;
+            padding: 2.5rem 1.25rem 4rem;
+        }
+
+        .page {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* 主视觉 — 克制留白 */
+        .hero {
+            margin-bottom: 3rem;
+            padding-top: 1.5rem;
+            border-bottom: 1px solid #e4eaef;
+            padding-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            color: #0f1c2b;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #5b6f82;
+            max-width: 30em;
+            margin-top: 0.6rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #eef3f7;
+            color: #2c4b66;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 卡片通用 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 20, 30, 0.04);
+            transition: box-shadow 0.2s;
+            border: 1px solid #e9f0f5;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 30, 50, 0.06);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #12344a;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card-icon {
+            font-size: 1.2rem;
+            opacity: 0.75;
+            margin-right: 0.1rem;
+        }
+
+        .card p {
+            font-size: 0.97rem;
+            color: #2d3e52;
+        }
+
+        .card ul {
+            margin: 0.7rem 0 0.2rem 1.2rem;
+            color: #2d3e52;
+            font-size: 0.96rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .card li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #8299af;
+            font-weight: 700;
+        }
+
+        /* 自然链接段落 */
+        .link-block {
+            background: #f3f7fb;
+            border-radius: 18px;
+            padding: 1.6rem 1.8rem;
+            margin: 2.2rem 0;
+            border-left: 3px solid #b5ccde;
+        }
+
+        .link-block p {
+            font-size: 0.98rem;
+            color: #1d3143;
+            margin-bottom: 0.4rem;
+        }
+
+        .link-block a {
+            color: #1a5a7a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b5ccde;
+            font-weight: 500;
+        }
+
+        .link-block a:hover {
+            color: #0a3d56;
+            text-decoration-color: #1a5a7a;
+        }
+
+        /* 提示 / 提醒 */
+        .notice {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid #dee8f0;
+            margin: 2rem 0;
+        }
+
+        .notice h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #264b63;
+            margin-bottom: 0.6rem;
+        }
+
+        .notice p {
+            font-size: 0.94rem;
+            color: #39576b;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            margin: 2.8rem 0 1.5rem;
+            border-top: 1px solid #e0e9f0;
+            padding-top: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1a3a4e;
+            font-size: 0.98rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item p {
+            font-size: 0.93rem;
+            color: #3b5569;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e1eaf1;
+            margin: 2rem 0;
+        }
+
+        .footer-note {
+            font-size: 0.8rem;
+            color: #71889d;
+            text-align: center;
+            margin-top: 3.5rem;
+            letter-spacing: 0.2px;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem 0.8rem 3rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.3rem 1.2rem;
+            }
+            .link-block {
+                padding: 1.3rem 1.2rem;
+            }
+            .notice {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉 -->
+    <div class="hero">
+        <h1>雷速 · 简明访问指南</h1>
+        <div class="sub">
+            一份关于使用方向、适合场景与基本提醒的轻量页面。不绕弯，只说实际用得上的事。
+        </div>
+        <span class="tagline">信息卡片式 · 温和提醒</span>
+    </div>
+
+    <!-- 用途卡片：简明使用场景 -->
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title"><span class="card-icon">📋</span> 用途参考</div>
+            <p>
+                日常信息查阅、内容整理或轻量工具调用，都可借助<strong>雷速</strong>作为辅助入口。
+                它更偏向于提供一种简洁的中间层，减少冗余步骤。
+            </p>
+            <ul>
+                <li>快速检索与归纳常见问题</li>
+                <li>浏览结构化内容模块</li>
+                <li>获取相对稳定的访问体验</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><span class="card-icon">👤</span> 适合哪些人</div>
+            <p>
+                不限定专业背景，只要对信息获取效率有基本要求，或希望减少复杂跳转的用户。
+                尤其适合：
+            </p>
+            <ul>
+                <li>习惯使用简洁界面的浏览者</li>
+                <li>需要快速定位常用内容的日常使用者</li>
+                <li>倾向先看说明、再决定下一步的谨慎型访客</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><span class="card-icon">⚙️</span> 特点一览</div>
+            <p>
+                页面结构以信息层级清晰为主，不堆砌动效，减少认知负担。
+                同时保留必要的引导，不会让首次接触的人感到茫然。
+            </p>
+            <ul>
+                <li>极简留白，降低视觉干扰</li>
+                <li>窄幅正文，阅读节奏适中</li>
+                <li>卡片分区，便于按需扫读</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 自然链接段落：嵌入 a 标签 -->
+    <div class="link-block">
+        <p>
+            若你希望进一步了解或直接使用，可以前往 <a href="https://cnsite--leisu.com">雷速</a> 
+            查看完整内容。该站点保持了一贯的轻量风格，没有额外的强制注册或复杂流程。
+        </p>
+        <p style="margin-top:0.6rem; font-size:0.9rem; color:#527286;">
+            建议在访问前确认网络稳定，并留意页面中的说明文字。
+        </p>
+    </div>
+
+    <!-- 访问提醒 + 简明提示 -->
+    <div class="notice">
+        <h3>🔔 访问提醒</h3>
+        <p>
+            使用任何在线服务时，建议通过可信任的网络环境进入。 
+            雷速页面本身不收集不必要的个人信息，但请自行留意浏览器地址栏的协议与域名拼写。
+            如遇到加载异常，可稍后重试或检查本地网络设置。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 — 以温和口吻 -->
+    <div class="faq-mini">
+        <div class="faq-item">
+            <strong>这个页面解决什么问题？</strong>
+            <p>它是一份静态介绍，帮助你快速了解雷速的定位、适用场景以及基本的访问注意事项。不含诱导或推销内容。</p>
+        </div>
+        <div class="faq-item">
+            <strong>需要注册或下载吗？</strong>
+            <p>就当前介绍的性质而言，无需额外注册或安装。直接通过浏览器访问<a href="https://cnsite--leisu.com" style="color:#1a5a7a; text-decoration:underline; text-underline-offset:2px;">雷速</a>即可浏览。</p>
+        </div>
+        <div class="faq-item">
+            <strong>内容会频繁变化吗？</strong>
+            <p>页面结构相对稳定，但具体信息可能随站点调整而更新。建议以实际访问时呈现的内容为准。</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-note">
+        保持简单 · 信息卡片式介绍 · 仅供方向参考
+    </div>
+
+</div>
+</body>
+</html>
