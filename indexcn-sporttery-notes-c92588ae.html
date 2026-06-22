@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 2.8rem 2.2rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+            color: #0f172a;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: #475569;
+            border-left: 3px solid #3b82f6;
+            padding-left: 1.2rem;
+            margin-bottom: 2.4rem;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #e9edf2;
+            display: inline-block;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #334155;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.6rem 0 2rem;
+        }
+
+        .card {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 1.2rem 1.4rem;
+            transition: background 0.2s;
+        }
+
+        .card:hover {
+            background: #e9edf2;
+        }
+
+        .card-title {
+            font-weight: 550;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card-title .emoji-marker {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #3b82f6;
+            border-radius: 10px;
+            margin-right: 6px;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            margin-bottom: 0;
+            color: #475569;
+        }
+
+        .info-block {
+            background: #f8fafc;
+            border: 1px solid #dee5ed;
+            border-radius: 20px;
+            padding: 1.3rem 1.6rem;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        .info-block strong {
+            color: #0f172a;
+            font-weight: 550;
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-a {
+            color: #475569;
+            font-size: 0.94rem;
+            padding-left: 0.4rem;
+        }
+
+        .notice {
+            font-size: 0.88rem;
+            background: #fef9e7;
+            border-left: 4px solid #eab308;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            margin: 2rem 0 1rem;
+            color: #4a3f1e;
+        }
+
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+            margin: 1.6rem 0 0.4rem;
+            font-size: 0.94rem;
+        }
+
+        .related-links a {
+            color: #475569;
+            border-bottom: 1px dashed #b9c2cf;
+        }
+
+        .related-links a:hover {
+            border-bottom-color: #2563eb;
+            color: #1e293b;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .footer-note {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            text-align: left;
+            margin-top: 2.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero-sub {
+                font-size: 0.95rem;
+                padding-left: 1rem;
+            }
+
+            .card-grid {
+                gap: 0.8rem;
+            }
+
+            .card {
+                padding: 1rem 1.1rem;
+            }
+
+            .info-block {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>竞彩网 · 信息导航</h1>
+    <div class="hero-sub">
+        一个聚合体育竞彩资讯与知识的中文平台，帮助新用户快速理解站点定位与内容结构。
+    </div>
+
+    <!-- 介绍段落 + 自然链接 -->
+    <p>
+        <a href="https://indexcn-sporttery.com">竞彩网</a> 以赛事数据、竞彩知识、玩法说明为核心，面向希望系统了解体育竞彩的用户。与常见的即时比分或投注入口不同，该站更偏向知识整理——从基础规则到进阶策略，提供了分门别类的参考内容。
+    </p>
+
+    <!-- 目录感布局：卡片式栏目预览 -->
+    <div class="section-title">📋 内容目录</div>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title"><span class="emoji-marker"></span> 竞彩基础</div>
+            <p>玩法类型、过关方式、奖金计算原则。适合刚接触竞彩、需要建立框架的浏览者。</p>
+        </div>
+        <div class="card">
+            <div class="card-title"><span class="emoji-marker"></span> 赛事数据分析</div>
+            <p>联赛覆盖、历史对阵、赔率变动背景。部分页面提供统计图表与趋势说明。</p>
+        </div>
+        <div class="card">
+            <div class="card-title"><span class="emoji-marker"></span> 实用提示与术语</div>
+            <p>常见术语解释、投注限制说明、资金管理入门。内容客观，不涉及承诺收益。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：站点功能定位 -->
+    <div class="section-title">ℹ️ 说明区</div>
+    <div class="info-block">
+        <p><strong>站点属性：</strong>非官方销售平台，不提供直接投注或支付通道。所有内容均为竞彩知识展示与信息索引。</p>
+        <p><strong>内容来源：</strong>整合自公开规则文档、赛事数据接口及行业通用知识库，保持中立表述。</p>
+        <p><strong>适合人群：</strong>想理解竞彩逻辑的爱好者、需要快速查阅玩法说明的入门用户、以及希望系统梳理信息的深度读者。</p>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="section-title">📌 提示区</div>
+    <div class="notice">
+        ⚠️ 竞彩涉及概率与风险，所有信息仅供参考。<br>
+        建议用户在参与前仔细阅读官方规则，理性评估。本站不引导或鼓励非理性投入。
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 -->
+    <div class="section-title">❓ 常见问题摘要</div>
+    <div class="faq-item">
+        <div class="faq-q">Q：竞彩串关最多支持几场？</div>
+        <div class="faq-a">根据公开规则，单票最高可串 8 场（不同玩法略有差异），具体以 <a href="https://indexcn-sporttery.com">竞彩网</a> 玩法页面说明为准。</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">Q：如何查看一场比赛的让球数据？</div>
+        <div class="faq-a">在赛事详情页通常包含让球数、SP 值变化及历史同赔参考，可通过对应联赛入口浏览。</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">Q：网站会更新实时赔率吗？</div>
+        <div class="faq-a">部分数据页面具备延迟更新（非即时），适合回顾与学习，不适合作为实时投注依据。</div>
+    </div>
+
+    <!-- 相关链接区 (非强制交互) -->
+    <hr>
+    <div class="section-title" style="margin-top:0;">🔗 相关信息</div>
+    <div class="related-links">
+        <a href="https://indexcn-sporttery.com">竞彩网</a>
+        <span style="color:#94a3b8;">·</span>
+        <a href="https://indexcn-sporttery.com">竞彩网</a>
+        <span style="color:#94a3b8;">·</span>
+        <a href="https://indexcn-sporttery.com">竞彩网</a>
+        <span style="color:#94a3b8;">·</span>
+        <a href="https://indexcn-sporttery.com">竞彩网</a>
+    </div>
+    <p style="font-size:0.9rem; color:#64748b; margin-top:0.8rem;">
+        以上链接均指向同一站点不同栏目，便于快速跳转至对应知识模块。
+    </p>
+
+    <div class="footer-note">
+        页面仅作知识介绍用途 · 不构成任何建议
+    </div>
+</div>
+</body>
+</html>
