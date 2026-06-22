@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 信息索引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f6f9;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 3.5rem 1.5rem 2.5rem;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2.5rem;
+            border: 1px solid #e9edf2;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0b1c2e;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #4b5a6b;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .hero .sub {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: #eef1f5;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #2f4156;
+            border: 1px solid #dce2e9;
+        }
+
+        /* card grid */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .card {
+            flex: 1 1 280px;
+            background: white;
+            border-radius: 22px;
+            padding: 2rem 1.6rem 1.8rem;
+            border: 1px solid #e0e5ec;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.7rem;
+            color: #0f263b;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #3b4b5e;
+            margin-bottom: 1rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #f0f3f8;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #2c4058;
+            border: 1px solid #dde3ec;
+            margin-top: 0.4rem;
+        }
+
+        /* wide card — 人群 */
+        .wide-card {
+            background: white;
+            border-radius: 22px;
+            padding: 2rem 2rem 2.2rem;
+            border: 1px solid #e0e5ec;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2.8rem;
+        }
+
+        .wide-card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #0f263b;
+        }
+
+        .persona-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem 2.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .persona-item {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .persona-item .emoji-badge {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-top: 0.1rem;
+        }
+
+        .persona-item .desc strong {
+            display: block;
+            font-weight: 500;
+            color: #1a2e44;
+            margin-bottom: 0.2rem;
+        }
+
+        .persona-item .desc {
+            color: #3b4b5e;
+            font-size: 0.95rem;
+        }
+
+        /* 自然链接段落 */
+        .link-section {
+            background: white;
+            border-radius: 22px;
+            padding: 2rem 2rem 2.2rem;
+            border: 1px solid #e0e5ec;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .link-section h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #0f263b;
+        }
+
+        .link-section p {
+            font-size: 1rem;
+            color: #2c3f54;
+            margin-bottom: 1.2rem;
+            max-width: 780px;
+        }
+
+        .link-section a {
+            color: #1d4b7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b3c7df;
+            transition: border-color 0.15s;
+        }
+
+        .link-section a:hover {
+            border-bottom-color: #1d4b7a;
+        }
+
+        .link-section .footnote {
+            font-size: 0.9rem;
+            color: #5b6f82;
+            border-left: 3px solid #d2dbe8;
+            padding-left: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* faq 摘要 */
+        .faq-mini {
+            background: white;
+            border-radius: 22px;
+            padding: 2rem 2rem 2rem;
+            border: 1px solid #e0e5ec;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #0f263b;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #edf1f7;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1a2e44;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item span {
+            color: #3b4b5e;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #6c7e91;
+            font-size: 0.85rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dde3ec;
+            margin-top: 1.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .card-grid {
+                gap: 1.2rem;
+            }
+
+            .card {
+                padding: 1.6rem 1.2rem 1.4rem;
+            }
+
+            .wide-card,
+            .link-section,
+            .faq-mini {
+                padding: 1.6rem 1.2rem;
+            }
+
+            .persona-list {
+                gap: 1.2rem;
+            }
+
+            .persona-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 900px) {
+            .card {
+                flex: 1 1 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 主视觉 -->
+    <div class="hero">
+        <h1>竞彩信息索引</h1>
+        <p>一份围绕竞彩网整理的参考页，涵盖用途、内容方向与访问入口，方便快速了解站点定位。</p>
+        <span class="sub">信息卡片式 · 稳定入口</span>
+    </div>
+
+    <!-- 用途卡片 三块 -->
+    <div class="card-grid">
+        <div class="card">
+            <span class="icon">📋</span>
+            <h3>赛事指南</h3>
+            <p>聚合常见竞彩赛事类型与规则说明，帮助浏览者初步了解场次、串关等基础概念。</p>
+            <span class="tag">玩法参考</span>
+        </div>
+        <div class="card">
+            <span class="icon">📁</span>
+            <h3>信息索引</h3>
+            <p>页面以卡片方式整理站点主要功能模块，便于从首页直接跳转至感兴趣的内容分区。</p>
+            <span class="tag">导航辅助</span>
+        </div>
+        <div class="card">
+            <span class="icon">⚙️</span>
+            <h3>使用指引</h3>
+            <p>收录关于投注、查询、账户管理等常见操作的说明摘要，省去反复搜索的时间。</p>
+            <span class="tag">操作备忘</span>
+        </div>
+    </div>
+
+    <!-- 适合人群 wide card -->
+    <div class="wide-card">
+        <h2>适合人群</h2>
+        <div class="persona-list">
+            <div class="persona-item">
+                <div class="emoji-badge">🕹️</div>
+                <div class="desc">
+                    <strong>竞彩爱好者</strong>
+                    希望快速找到赛事列表与规则页面的用户。
+                </div>
+            </div>
+            <div class="persona-item">
+                <div class="emoji-badge">📊</div>
+                <div class="desc">
+                    <strong>信息收集者</strong>
+                    需要梳理竞彩网站结构、索引常用页面的人。
+                </div>
+            </div>
+            <div class="persona-item">
+                <div class="emoji-badge">🧭</div>
+                <div class="desc">
+                    <strong>初次浏览者</strong>
+                    还未熟悉站点布局，想通过一张卡片页快速定位。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 自然链接段落 + 说明 -->
+    <div class="link-section">
+        <h2>关于本站</h2>
+        <p>
+            此介绍页作为 <a href="https://indexportal-sporttery.com">竞彩网</a> 的辅助索引，
+            集中展示了站点所提供的赛事信息模块与常用功能入口。内容围绕真实页面结构整理，
+            没有额外修饰或夸大说明，适合作为了解该站内容的起点。
+        </p>
+        <p>
+            页面中所列卡片对应竞彩网的主要分区，每个模块都对应实际存在的栏目或说明页。
+            若需要直接浏览完整信息，可随时通过顶部链接前往 <a href="https://indexportal-sporttery.com">竞彩网</a> 查看最新内容。
+        </p>
+        <div class="footnote">
+            ※ 本页仅为索引介绍，不涉及投注引导或结果预测，所有描述均基于站点现有公开信息。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h2>常见问题摘要</h2>
+        <div class="faq-item">
+            <strong>这个页面和竞彩网是什么关系？</strong>
+            <span>它是竞彩网的一份独立介绍索引页，方便浏览者快速了解网站结构和内容方向。</span>
+        </div>
+        <div class="faq-item">
+            <strong>所有卡片都指向真实页面吗？</strong>
+            <span>是的，卡片描述基于竞彩网现有的赛事、规则和辅助功能模块整理，可对应实际栏目。</span>
+        </div>
+        <div class="faq-item">
+            <strong>页面会更新吗？</strong>
+            <span>内容会随着竞彩网结构变化而调整，保持索引与说明的时效性。</span>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-note">
+        信息卡片式介绍 · 仅供索引参考
+    </div>
+
+</div>
+</body>
+</html>
